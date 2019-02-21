@@ -3,7 +3,7 @@ import axios from 'axios';
 import wx from 'weixin-js-sdk';
 const _config={
   wx_error:'',
-  jsSDKAuth:'/api/mobile/WeiXin/ecstoreSendJsSdk',
+  jsSDKAuth:'',
   shareSign:{
     appid:"",
     jsapi_ticket:"",
