@@ -13,15 +13,7 @@
 2. 配置微信分享 jssdk
 3. 路由切换时, 重新执行步骤2
 ```
--------
-#### 其他
- /wxShare.js 为插件源码文件, 可根据自己需求自行更改
-demo 工程只需 clone 本工程,
-```
-npm install
-npm run serve
-```
---------
+
 
 #### 1. 快速使用, 只需三步
 在工程入口文件引入 wxShare 文件
@@ -32,6 +24,7 @@ import wx from 'weixin-js-sdk';
 //配置授权api
 wxShare.config.jsSDKAuth='/api/mobile/WeiXin/ecstoreSendJsSdk';
 ```
+
 ```
 /*************** 第二步 初始化微信分享 ************/
 if (location.host != "localhost:8080") {
@@ -42,6 +35,7 @@ if (location.host != "localhost:8080") {
   }
 }
 ```
+
 ```
 /*************** 第三步 监听路由重置微信分享为默认 ************/
 router.afterEach(route => {
@@ -55,7 +49,7 @@ router.afterEach(route => {
 /*************** end 分割线 ************/
 ```
 
-#### 2. wxShare方法
+#### 2. wxShare提供的方法
 2.1 initWxShare()
 ```
 初始化微信分享, 此时会调用内部方法 wxShareAuth, 请求 api 授权当前页面 url;
@@ -73,7 +67,7 @@ router.afterEach(route => {
 调用微信jsSDK 完成分享配置
 ```
 
-#### 2. wxShare.config属性配置
+#### 3. wxShare.config属性配置
 
 |配置名称|属性值|默认值|
 |-|-|-|
@@ -84,7 +78,7 @@ router.afterEach(route => {
 
 
 
-##### 2.1 shareSign配置
+##### 3.1 shareSign提供的配置
 
 ```
 {
@@ -96,7 +90,7 @@ router.afterEach(route => {
   url:"",
 }
 ```
-##### 2.2 defaultWxShareConfig
+##### 3.2 defaultWxShareConfig
 
 ```
 {
@@ -109,12 +103,20 @@ router.afterEach(route => {
 }
 ```
 
-##### 2.3 wxShareConfig
+##### 3.3 wxShareConfig
 
 ```
 wxShareConfig:{}
 ```
-
+-------
+#### 其他
+ /wxShare.js 为插件源码文件, 可根据自己需求自行更改
+demo 工程只需 clone 本工程,
+```
+npm install
+npm run serve
+```
+--------
 
 npm依赖插件
 
